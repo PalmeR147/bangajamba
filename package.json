@@ -10,7 +10,7 @@
     "eslint-plugin-react": "^7.2.1",
     "less": "^2.7.2",
     "less-watch-compiler": "^1.7.0",
-    "babel-eslint": "^7.2.3"    
+    "babel-eslint": "^7.2.3"
   },
   "dependencies": {
     "react": "^16.0.0",
