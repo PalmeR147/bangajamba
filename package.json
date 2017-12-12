@@ -2,13 +2,25 @@
   "name": "bangajamba",
   "version": "0.1.0",
   "private": true,
+  "devDependencies": {
+    "eslint": "^4.4.1",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.2.1",
+    "less": "^2.7.2",
+    "less-watch-compiler": "^1.7.0",
+    "babel-eslint": "^7.2.3"    
+  },
   "dependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-scripts": "1.0.14"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "compile-less": "lessc less/app.less public/app.css",
+    "watch-less": "less-watch-compiler less/ public/ app.less",
+    "start": "npm run compile-less && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
