@@ -2,6 +2,7 @@
   "name": "bangajamba",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://palmer147.github.io/bangajamba/",
   "devDependencies": {
     "eslint": "^4.4.1",
     "eslint-config-airbnb": "^15.1.0",
@@ -18,6 +19,8 @@
     "react-scripts": "1.0.14"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "compile-less": "lessc less/app.less public/app.css",
     "watch-less": "less-watch-compiler less/ public/ app.less",
     "start": "npm run compile-less && react-scripts start",

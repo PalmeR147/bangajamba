@@ -12,6 +12,14 @@
           "args": ["start", "watch-less"]
       },
       {
+          "taskName": "deploy",
+          "args": ["predeploy"]
+      },
+      {
+          "taskName": "deploy",
+          "args": ["deploy"]
+      },
+      {
           "taskName": "eslint",
           "args": ["eslint-report"]
       }        
