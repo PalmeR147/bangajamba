@@ -1,40 +1,36 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Article = ({title, subtitle, body, author, imageSrc}) => (
+const Article = ({ hgroup, body, author, imageSrc }) => (
   <div>
-  <article>
-    <header>
-      <hgroup>
-        <h1>{title}</h1>
-        <h2>{subtitle}</h2>
-        </hgroup>
-        </header>
-        <p>{body}</p>
-        <footer>
-          <p>{author}</p>
-          </footer>
-          <img src={imageSrc} width={"100%"} />
+    <article>
+      <header>
+        {hgroup &&
+          <hgroup>
+            {...hgroup}
+          </hgroup>
+        }
+      </header>
+
+      {typeof body === 'string' ? <p>{body}</p> : body}
+      <footer>
+        {author ?
+          <p>{`Written by: ${author.FirstName ? author.FirstName : '---'} ${author.LastName ? author.LastName : '___'}.`}</p> :
+          <p>Written by unknown.</p>}
+      </footer>
+      {imageSrc && <img alt="temp" src={imageSrc} width={'100%'} />}
     </article>
-    </div>
-)
+  </div>
+);
+
+Article.propTypes = {
+  hgroup: PropTypes.shape(),
+  body: PropTypes.string,
+  author: PropTypes.shape({
+    FirstName: PropTypes.string,
+    LastName: PropTypes.string,
+  }),
+  imageSrc: PropTypes.string,
+};
 
 export default Article;
-
-// "<article>" +
-// "<header>" +
-// "<hgroup>" +
-// "<h1>Title of Article</h1>" +
-// "<h2>Subtitle for Article</h2>" +
-// "</hgroup>" +
-// "</header>" +
-// "<p>This is a article</p>" +
-// "<footer>" +
-// "<p>Written by Bangajamba</p>" +
-// "</footer>" +
-// "</article>" +
-// "<img src=\"/images/whosPrettiest.PNG\" width=\"100%\"/>" +
-// "<br><br/>"+ 
-// "<article>" +
-// "<h1>IoT Projects(Mirror, Camera, Car, Controller)</h1>" +
-// "</article>"+
-// "<img src=\"/images/IoTProjects.jpg\" width=\"100%\"/>" 

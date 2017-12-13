@@ -12,7 +12,7 @@
           "args": ["start", "watch-less"]
       },
       {
-          "taskName": "deploy",
+          "taskName": "predeploy",
           "args": ["predeploy"]
       },
       {

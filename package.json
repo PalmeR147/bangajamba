@@ -4,19 +4,21 @@
   "private": true,
   "homepage": "https://palmer147.github.io/bangajamba/",
   "devDependencies": {
-    "eslint": "^4.4.1",
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.5.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.2.1",
     "less": "^2.7.2",
     "less-watch-compiler": "^1.7.0",
-    "babel-eslint": "^7.2.3"
+    "react-scripts": "^1.0.11",
+    "webpack-config": "^7.5.0"
   },
   "dependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-scripts": "1.0.14"
+    "prop-types": "^15.5.10"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -26,6 +28,81 @@
     "start": "npm run compile-less && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "eslint-report": "eslint **/*.js"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "globals": {
+      "fetch": true
+    },
+    "rules": {
+      "linebreak-style": [
+        "error",
+        "windows"
+      ],
+      "arrow-parens": [
+        "error",
+        "always"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ],
+      "space-before-function-paren": [
+        "error",
+        "always"
+      ],
+      "jsx-quotes": [
+        "error",
+        "prefer-double"
+      ],
+      "no-unused-vars": [
+        "error",
+        {
+          "varsIgnorePattern": "React"
+        }
+      ],
+      "no-unused-expressions": [
+        2,
+        {
+          "allowTernary": true
+        }
+      ],
+      "no-shadow": 0,
+      "react/jsx-uses-vars": [
+        2
+      ],
+      "react/require-default-props": [
+        0
+      ],
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ],
+      "react/jsx-no-bind": [
+        1,
+        {
+          "ignoreRefs": false,
+          "allowArrowFunctions": false,
+          "allowBind": false
+        }
+      ],
+      "jsx-a11y/href-no-hash": "off",
+      "jsx-a11y/anchor-is-valid": [
+        "warn",
+        {
+          "aspects": [
+            "invalidHref"
+          ]
+        }
+      ]
+    }
   }
 }
