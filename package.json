@@ -21,7 +21,7 @@
     "prop-types": "^15.5.10"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && git subtree pull --prefix build origin gh-pages",
     "publishx": "git subtree push --prefix build origin gh-pages",
     "deploy": "npm run predeploy && npm run publishx",
     "compile-less": "lessc less/app.less public/app.css",
