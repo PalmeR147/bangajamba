@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const Article = ({ hgroup, body, author, imageSrc }) => (
   <div>
@@ -7,7 +7,7 @@ const Article = ({ hgroup, body, author, imageSrc }) => (
       <header>
         {hgroup &&
           <hgroup>
-            {...hgroup}
+            {console.log(...hgroup)}
           </hgroup>
         }
       </header>
@@ -23,14 +23,14 @@ const Article = ({ hgroup, body, author, imageSrc }) => (
   </div>
 );
 
-Article.propTypes = {
-  hgroup: PropTypes.shape(),
-  body: PropTypes.string,
-  author: PropTypes.shape({
-    FirstName: PropTypes.string,
-    LastName: PropTypes.string,
-  }),
-  imageSrc: PropTypes.string,
-};
+// Article.propTypes = {
+//   hgroup: PropTypes.shape(),
+//   body: PropTypes.string,
+//   author: PropTypes.shape({
+//     FirstName: PropTypes.string,
+//     LastName: PropTypes.string,
+//   }),
+//   imageSrc: PropTypes.string,
+// };
 
 export default Article;

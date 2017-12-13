@@ -22,7 +22,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "git gh-pages -d build",
     "compile-less": "lessc less/app.less public/app.css",
     "watch-less": "less-watch-compiler less/ public/ app.less",
     "start": "npm run compile-less && react-scripts start",
