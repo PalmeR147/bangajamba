@@ -7,7 +7,7 @@ const Article = ({ hgroup, body, author, imageSrc }) => (
       <header>
         {hgroup &&
           <hgroup>
-            {console.log(...hgroup)}
+            {/* {{ ...hgroup }} */}
           </hgroup>
         }
       </header>

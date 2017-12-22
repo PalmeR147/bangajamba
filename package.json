@@ -5,7 +5,7 @@
   "homepage": "https://palmer147.github.io/bangajamba/",
   "devDependencies": {
     "babel-eslint": "^7.2.3",
-    "eslint": "^4.5.0",
+    "eslint": "^4.13.1",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
@@ -22,8 +22,8 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "publish": "git checkout master && git subtree split --prefix build -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages",
-    "deploy": "npm run predeploy && npm run publish",
+    "publisha": "git checkout gh-pages && git subtree split --prefix build -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages",
+    "deploy": "npm run predeploy && npm run publisha",
     "compile-less": "lessc less/app.less public/app.css",
     "watch-less": "less-watch-compiler less/ public/ app.less",
     "start": "npm run compile-less && react-scripts start",
